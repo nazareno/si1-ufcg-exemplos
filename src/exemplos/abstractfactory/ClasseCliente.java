@@ -10,6 +10,7 @@ public class ClasseCliente {
 				"zezinho@zezinholivros.com.br");
 
 		Pedido pedido = new Pedido();
+		
 		pedido.addItem("Livro sobre padr›es de projeto", 50);
 		pedido.addItem("Livro sobre arquitetura de software", 30);
 
