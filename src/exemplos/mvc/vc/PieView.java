@@ -8,7 +8,7 @@ import org.jfree.data.general.DefaultPieDataset;
 
 public class PieView extends ChartPanel implements InteressadoNaLogica {
 
-	private static final String ÍMPARES_KEY = "Ímpares";
+	private static final String IMPARES_KEY = "√çmpares";
 	private static final String PARES_KEY = "Pares";
 	
 	private DefaultPieDataset dataset;
@@ -21,15 +21,15 @@ public class PieView extends ChartPanel implements InteressadoNaLogica {
 	}
 
 	/**
-	 * Vide XYView para explicação.
+	 * Vide XYView para explica√ß√£o.
 	 */
 	public static PieView createPiewView() {
 		DefaultPieDataset dataset = new DefaultPieDataset();
 
 		dataset.setValue(PARES_KEY, 50.0);
-		dataset.setValue(ÍMPARES_KEY, 50.0);
+		dataset.setValue(IMPARES_KEY, 50.0);
 
-		JFreeChart chart = ChartFactory.createPieChart("Visão de torta", // chart
+		JFreeChart chart = ChartFactory.createPieChart("Vis√£o de torta", // chart
 				// title
 				dataset, // data
 				true, // include legend
@@ -46,14 +46,14 @@ public class PieView extends ChartPanel implements InteressadoNaLogica {
 	public void notificaValorAdicionado(double valor) {
 		/*
 		 * Uma implementacao melhor ainda seria sempre perguntar ao modelo qual
-		 * a quantidade de valores pares e ímpares armazenados. Como fazer isso?
+		 * a quantidade de valores pares e Impares armazenados. Como fazer isso?
 		 */
-		System.out.println("Visão 2: notificada da adição de " + valor + " no modelo");
+		System.out.println("Vis√£o 2: notificada da adi√ß√£o de " + valor + " no modelo");
 		atualizaValoresConhecidos(valor);
 	}
 
 	/**
-	 * Lógica do que deve ser feito a cada novo valor. 
+	 * L√≥gica do que deve ser feito a cada novo valor. 
 	 */
 	private void atualizaValoresConhecidos(double valor) {
 		double paresAtuais = getParesAtuais();
@@ -63,18 +63,18 @@ public class PieView extends ChartPanel implements InteressadoNaLogica {
 
 		if (((int) valor) % 2 == 0) {
 			paresAtuais += 1;
-			System.out.println("Visão 2: mais um valor par.");
+			System.out.println("Vis√£o 2: mais um valor par.");
 		} else {
 			imparesAtuais += 1;
-			System.out.println("Visão 2: mais um valor ímpar.");
+			System.out.println("Vis√£o 2: mais um valor √≠mpar.");
 		}
 
 		this.dataset.setValue(PARES_KEY, paresAtuais / valoresConhecidos);
-		this.dataset.setValue(ÍMPARES_KEY, imparesAtuais / valoresConhecidos);
+		this.dataset.setValue(IMPARES_KEY, imparesAtuais / valoresConhecidos);
 	}
 
 	private double getImparesAtuais() {
-		double imparesAtuais = this.dataset.getValue(ÍMPARES_KEY).doubleValue()
+		double imparesAtuais = this.dataset.getValue(IMPARES_KEY).doubleValue()
 				* valoresConhecidos;
 		return imparesAtuais;
 	}

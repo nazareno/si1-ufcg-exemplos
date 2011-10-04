@@ -13,8 +13,8 @@ import exemplos.mvc.model.DadosDoNegocio;
 
 
 /**
- * O Modelo é um objeto da classe DadosDoNegócio. O controlador lida com o
- * apertar de um botão na interface, e há duas visões baseadas em JFreeChart.
+ * O Modelo √© um objeto da classe DadosDoNeg√≥cio. O controlador lida com o
+ * apertar de um bot√£o na interface, e h√° duas vis√µes baseadas em JFreeChart.
  * 
  * @author nazareno
  * 
@@ -30,7 +30,7 @@ public class ExemploMVC extends ApplicationFrame {
 		model.cadastraInteressadoNaLogica(view1);
 		model.cadastraInteressadoNaLogica(view2);
 
-		// dispositivo de input do usuário:
+		// dispositivo de input do usu√°rio:
 		JButton button = new JButton("Add New Data Item");
 		// ligando ao controlador:
 		button.addActionListener(controller);

@@ -22,7 +22,7 @@ public class Configuracao {
 		this.tmpPath = tmpPath;
 	}
 	
-	private Configuracao(){
+	protected Configuracao(){
 		this(DEFAULT_TIMEOUT, DEFAULT_TMPPATH);
 	}
 
