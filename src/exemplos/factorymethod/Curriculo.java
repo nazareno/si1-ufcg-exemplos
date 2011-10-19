@@ -21,15 +21,15 @@ public class Curriculo {
 		List<Pagina> paginas = new LinkedList<Pagina>();
 
 		/*
-		 * Imagine que aqui tem bastante código tratando entradas e gerando mais
-		 * informação a partir do que foi dado pelo usuário.
+		 * Imagine que aqui tem bastante c√≥digo tratando entradas e gerando mais
+		 * informa√ß√£o a partir do que foi dado pelo usu√°rio.
 		 * 
-		 * Por exemplo, tem o link do currículo lattes dele e nós geramos mais
+		 * Por exemplo, tem o link do curr√≠culo lattes dele e n√£o geramos mais
 		 * dados.
 		 */
 
 		if(! validaNome(nome)){
-			throw new InvalidArgument("É necessário sobrenome");
+			throw new InvalidArgument("√© necess√°rio sobrenome");
 		}
 		
 		paginas.add(new PaginaDeRosto(nome));
