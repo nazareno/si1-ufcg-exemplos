@@ -1,5 +1,6 @@
 package exemplos.singleton;
 
+
 public class Configuracao {
 	
 	private static final long DEFAULT_TIMEOUT = 761325;
@@ -8,10 +9,9 @@ public class Configuracao {
 	private String tmpPath;
 	
 	private static Configuracao config;
-
-	public static Configuracao getInstance(){
+	
+	public static synchronized Configuracao getInstance(){
 		if(config == null){
-			// logica
 			config = new Configuracao();
 		}
 		return config;
