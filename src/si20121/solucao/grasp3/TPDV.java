@@ -12,7 +12,7 @@ public class TPDV {
 	private EmissorDeNotaFiscal emissor;
 
 	public TPDV(Loja loja, CatalogoDeProdutos catalogo,
-			EmissorDeNotaFiscal emissorTabajara) {
+			EmissorDeNotaFiscal emissor) {
 		this.loja = loja;
 		this.emissor = emissor;
 		this.catalogo = catalogo;

@@ -18,6 +18,7 @@ public class ThreadDeMensagens implements ExibivelComposto {
 	public void exibe() {
 		System.out.println("Inicio da Thread");
 		for (Exibivel msg : mensagens) {
+			System.out.println("\n-----");
 			msg.exibe();
 		}
 		System.out.println("Fim da Thread");

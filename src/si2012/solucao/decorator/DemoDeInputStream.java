@@ -1,4 +1,4 @@
-package si20112.depois.decorator;
+package si2012.solucao.decorator;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -48,11 +48,10 @@ public class DemoDeInputStream {
 		InputStream arquivo = new BufferedInputStream(new FileInputStream(
 				origem));
 
-		ZipOutputStream destino = new ZipOutputStream(
-									new CipherOutputStream(
+		ZipOutputStream destino = new ZipOutputStream(new CipherOutputStream(
 				new BufferedOutputStream(new FileOutputStream(arquivoDestino)),
 				new NullCipher()));
-		
+
 		// exemplo criptografando: Cipher.getInstance("DES/CBC/PKCS5Padding");
 
 		destino.putNextEntry(new ZipEntry(origem));

@@ -1,29 +1,26 @@
-package si20112.depois.composite;
+package si2012.durante.composite.msgs;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class Mensagem implements ExibivelComposto {
+public class Mensagem {
 
 	private String origem;
 	private String[] destinos;
 	private String texto;
-	private List<Exibivel> internos;
+	private Mensagem msgRespondida;
 
 	public Mensagem(String origem, String[] destinos, String texto) {
 		this.origem = origem;
 		this.destinos = destinos;
 		this.texto = texto;
-		
-		internos = new ArrayList<Exibivel>();
+		this.msgRespondida = null;
 	}
 
 	/**
-	 * Constroi resposta de uma msg original. 
+	 * Constroi resposta de uma msg original.
 	 */
-	public Mensagem(Mensagem msgOriginal, String origemUnica, String texto) {
-		this(msgOriginal.getOrigem(), new String[]{origemUnica}, texto);
-		this.internos.add(msgOriginal);
+	public Mensagem(Mensagem msgOriginal, String origem, String texto) {
+		this(origem, new String[] { msgOriginal.getOrigem() }, texto);
+		this.msgRespondida = msgOriginal;
 	}
 
 	/**
@@ -34,7 +31,8 @@ public class Mensagem implements ExibivelComposto {
 	}
 
 	/**
-	 * @param origem the origem to set
+	 * @param origem
+	 *            the origem to set
 	 */
 	public void setOrigem(String origem) {
 		this.origem = origem;
@@ -48,7 +46,8 @@ public class Mensagem implements ExibivelComposto {
 	}
 
 	/**
-	 * @param destinos the destinos to set
+	 * @param destinos
+	 *            the destinos to set
 	 */
 	public void setDestinos(String[] destinos) {
 		this.destinos = destinos;
@@ -62,25 +61,22 @@ public class Mensagem implements ExibivelComposto {
 	}
 
 	/**
-	 * @param texto the texto to set
+	 * @param texto
+	 *            the texto to set
 	 */
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
 
-	public void add(Exibivel e) {
-		this.internos.add(e);
-	}
-
+	/**
+	 * Mostra na tela a mensagem. 
+	 */
 	public void exibe() {
 		System.out.println(".Inicio da Msg");
 		System.out.println("De: " + this.getOrigem());
 		System.out.println("Para: " + this.getDestinos());
-		
+
 		System.out.println("Anexos:");
-		for (Exibivel exibivel : internos) {
-			exibivel.exibe();
-		}
-		
+		this.msgRespondida.exibe();
 	}
 }
