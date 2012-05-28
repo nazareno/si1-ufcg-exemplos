@@ -22,7 +22,7 @@ public class Carona {
 		if (encerrada)
 			throw new SolicitacaoIlegalException("Carona encerrada.");
 		this.pretendentes.add(usuario);
-		this.listeners.add(usuario);
+		this.addListener(usuario);
 	}
 
 	public void confirmaCaroneiro(Usuario usuario) {
@@ -44,13 +44,24 @@ public class Carona {
 	}
 
 	private void notificaListenersDeEncerramento() {
-		for (CaronaListener listener : listeners) {
-			listener.notificaEncerramento(this);
+		synchronized (listeners) {
+			for (final CaronaListener listener : listeners) {
+				Thread t = new Thread(new Runnable() {
+					@Override
+					public void run() {
+						listener.notificaEncerramento(Carona.this);
+					}
+				});
+				
+				t.start();
+			}
 		}
 	}
 
 	public void addListener(CaronaListener listener) {
-		this.listeners.add(listener);
+		synchronized (listeners) {
+			this.listeners.add(listener);
+		}
 	}
 
 	public boolean isConfirmado(Usuario usuario) {

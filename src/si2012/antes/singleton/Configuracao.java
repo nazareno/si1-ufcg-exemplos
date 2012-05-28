@@ -6,10 +6,11 @@ import java.util.List;
 public class Configuracao {
 
 	private static Configuracao config;
+	private static Object lock = new Object();
 
 	private int timeout;
 
-	public static Configuracao getInstance() {
+	public synchronized static Configuracao getInstance() {
 		if (config == null) {
 			try {
 				config = new Configuracao();
@@ -17,6 +18,7 @@ public class Configuracao {
 				e.printStackTrace();
 			}
 		}
+
 		return config;
 	}
 
