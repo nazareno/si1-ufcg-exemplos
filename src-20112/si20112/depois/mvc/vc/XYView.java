@@ -40,7 +40,7 @@ public class XYView extends ChartPanel implements InteressadoNaLogica {
 	 * @param chart
 	 *            O gr�fico para plotar dentro do painel.
 	 * @param series
-	 *            Os dados que o gr�fico usa.
+	 *            Os dados que o gráfico usa.
 	 */
 	private XYView(JFreeChart chart, XYSeries series) {
 		super(chart);
@@ -49,7 +49,7 @@ public class XYView extends ChartPanel implements InteressadoNaLogica {
 
 	@Override
 	public void notificaValorAdicionado(double valor) {
-		System.out.println("View1: notificada da adi��o de " + valor);
+		System.out.println("View1: notificada da adição de " + valor);
 		double coordenadaX = this.series.isEmpty() ? 1.0
 				: series.getMaxX() + 1.0;
 		this.series.add(coordenadaX, valor);
