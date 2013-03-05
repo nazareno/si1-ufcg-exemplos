@@ -9,8 +9,9 @@ depois que o jogo termina. O jogo termina quando:
 - Todos os campos de uma linha foram tomados pelo mesmo jogador
 - Todos os campos de uma diagonal foram tomados pelo mesmo jogador
 
+Os jogadores devem se alternar nas jogadas.
+
 Um jogador pode jogar desde que: 
-- Seja a sua vez
 - O campo desejado não tenha já sido tomado
 - O jogo não tenha acabado
 

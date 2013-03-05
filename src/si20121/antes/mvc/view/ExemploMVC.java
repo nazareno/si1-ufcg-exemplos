@@ -12,6 +12,9 @@ import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
 import si20121.antes.mvc.mc.SistemaDeRegistro;
+import si20121.antes.mvc.view.ExemploMVC;
+import si20121.antes.mvc.view.PieView;
+import si20121.antes.mvc.view.XYView;
 
 /**
  * A interface lida com o apertar de um botão na interface, e há duas visões

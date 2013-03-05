@@ -14,9 +14,15 @@ import java.util.List;
 public class RegistroDeEstatisticas {
 
 	private Deque<Double> estadoInterno;
+	private List<InteressadoNoModelo> interessados; 
 
 	public RegistroDeEstatisticas() {
 		estadoInterno = new LinkedList<Double>();
+		interessados = new LinkedList<InteressadoNoModelo>();
+	}
+	
+	public void cadastraNovoInteressado(InteressadoNoModelo interessado){
+		interessados.add(interessado);
 	}
 
 	public void adicionaDados() {
@@ -25,6 +31,9 @@ public class RegistroDeEstatisticas {
 		estadoInterno.addLast(novoDado);
 		System.out.println("Estado do modelo mudou.");
 		
+		for (InteressadoNoModelo interessado : interessados) {
+			interessado.avisoDeMudanca(novoDado);
+		}
 	}
 
 	private double gerarNovoDado() {

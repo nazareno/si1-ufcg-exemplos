@@ -6,6 +6,8 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 
+import si20121.antes.mvc.view.PieView;
+
 public class PieView extends ChartPanel  {
 
 	private static final String IMPARES_KEY = "Ímpares";

@@ -7,6 +7,8 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
+import si20121.antes.mvc.view.XYView;
+
 public class XYView extends ChartPanel {
 
 	/** The time series data. */

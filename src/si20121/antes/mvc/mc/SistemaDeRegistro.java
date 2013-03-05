@@ -1,6 +1,7 @@
 package si20121.antes.mvc.mc;
 
-import si20121.antes.mvc.view.XYView;
+import si20122.antes.mvc.mc.RegistroDeEstatisticas;
+import si20122.antes.mvc.view.XYView;
 
 /**
  * O Controller da lógica do domínio do problema.
