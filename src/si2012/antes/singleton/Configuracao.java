@@ -7,7 +7,7 @@ public class Configuracao {
 	public Configuracao() {
 		this.timeout = 0;
 	}
-	
+
 	/**
 	 * @return the timeout
 	 */

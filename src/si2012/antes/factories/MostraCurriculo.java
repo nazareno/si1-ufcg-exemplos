@@ -20,7 +20,6 @@ public class MostraCurriculo {
 		ThumbnailPDF tPdf = cv.getThumbnailPDF();
 		//CurriculoPNG png = cv.getConteudoPNG();
 		//ThumbnailPNG tPng = cv.getThumbnailPNG();
-		
 		//this.mostraThumbnail(pdf);
 		//this.mostraThumbnail(png);
 	}

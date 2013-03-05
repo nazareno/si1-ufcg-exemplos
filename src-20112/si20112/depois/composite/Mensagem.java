@@ -73,11 +73,11 @@ public class Mensagem implements ExibivelComposto {
 	}
 
 	public void exibe() {
-		System.out.println("---\nInicio da Msg");
+		System.out.println(".Inicio da Msg");
 		System.out.println("De: " + this.getOrigem());
 		System.out.println("Para: " + this.getDestinos());
 		
-		System.out.println("Msgs anteriores:");
+		System.out.println("Anexos:");
 		for (Exibivel exibivel : internos) {
 			exibivel.exibe();
 		}

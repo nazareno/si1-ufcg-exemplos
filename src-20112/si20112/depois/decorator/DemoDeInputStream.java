@@ -52,6 +52,8 @@ public class DemoDeInputStream {
 									new CipherOutputStream(
 				new BufferedOutputStream(new FileOutputStream(arquivoDestino)),
 				new NullCipher()));
+		
+		// exemplo criptografando: Cipher.getInstance("DES/CBC/PKCS5Padding");
 
 		destino.putNextEntry(new ZipEntry(origem));
 
