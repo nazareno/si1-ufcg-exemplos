@@ -24,10 +24,7 @@ public class SingletonTest {
 
 	@Test
 	public void testaModificacaoDeConfig() throws Exception {
-<<<<<<< HEAD
-=======
 		assertEquals(0, cliente2.getTimeout());
->>>>>>> cec5077feec5ca86269402cd4444bb40ac8da12b
 		cliente1.modificaTimeout(50);
 		assertEquals(50, cliente2.getTimeout());
 	}

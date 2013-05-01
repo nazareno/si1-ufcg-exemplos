@@ -1,5 +1,7 @@
 package si20121.depois.multithread.sincronizacao3;
 
+import si20122.depois.multithread.sincronizacao3.Contador;
+
 public class ContadorTest {
 	public static void main(String[] args) {
 		final Contador contador = new Contador();

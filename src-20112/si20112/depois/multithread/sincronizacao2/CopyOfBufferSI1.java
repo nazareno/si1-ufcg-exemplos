@@ -6,7 +6,7 @@ public class CopyOfBufferSI1 {
 	private boolean disponivel = false;
 
 	public synchronized void put(int numero) {
-		if (disponivel) {
+		while (disponivel) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -19,7 +19,7 @@ public class CopyOfBufferSI1 {
 	}
 
 	public synchronized int get() {
-		if (!disponivel) {
+		while (!disponivel) {
 			try {
 				wait();
 			} catch (InterruptedException e) {

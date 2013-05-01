@@ -33,7 +33,7 @@ public class CicloDeVidaDemo {
 
 
 		queDorme.interrupt();
-		queDorme.interrupt();
+		//queDorme.interrupt();
 		
 		log.info("Status,prioridade de queDorme: " + queDorme.getState() + ", "
 				+ queDorme.getPriority());

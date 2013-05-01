@@ -14,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class Servidor {
 	private FachadaDoSistema fachada = FachadaDoSistema.getInstance();
 
-	private ExecutorService servicoDeExecucao = Executors.newCachedThreadPool();
+	//private ExecutorService servicoDeExecucao = Executors.newCachedThreadPool();
+	private ExecutorService servicoDeExecucao = Executors.newFixedThreadPool(200);
 	
 	public static void main(String[] args) {
 
@@ -36,10 +37,10 @@ public class Servidor {
 	private void processa(List<Integer> requisicoes) {
 		((ThreadPoolExecutor) servicoDeExecucao).prestartAllCoreThreads();
 		System.out.println("Iniciando processamento");
-		List<Future<Float>> futures = new ArrayList<Future<Float>>();
+		
 		for (final Integer id : requisicoes) {
 			Callable<Float> trabalho = new Callable<Float>(){
-				@Override
+				@Override 
 				public Float call() {
 					System.out.println("Processando R: " + id);
 					fachada.alteraDadosDoUsuario();
@@ -48,19 +49,7 @@ public class Servidor {
 				}
 			};
 			
-			futures.add(servicoDeExecucao.submit(trabalho));
-		}
-		
-		try {
-			for (Iterator iterator = futures.iterator(); iterator.hasNext();) {
-				Future<Float> future = (Future<Float>) iterator.next();
-				Float resultado = future.get();
-				System.out.println("Resultado: " + resultado);
-			}
-		} catch (InterruptedException e1) {
-			e1.printStackTrace();
-		} catch (ExecutionException e1) {
-			e1.printStackTrace();
+			servicoDeExecucao.submit(trabalho);
 		}
 		
 		servicoDeExecucao.shutdown();
@@ -70,5 +59,6 @@ public class Servidor {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
 	}
 }
