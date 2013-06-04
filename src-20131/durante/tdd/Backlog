@@ -1,1 +1,14 @@
 Objetivo: implementar a lógica de um jogo da velha.
+
+- Se um jogador indicar uma jogada, a peça dele deve ser colocada no grid, 
+se o local indicado estiver livre, se o local estiver indicado, dá erro
+
+- Jogadas devem ser alternadas entre os dois tipos de peça até o jogo acabar
+
+- Se em uma mesma coluna, linha ou diagonal há 3 peças iguais, 
+o jogo acaba e o vencedor é o dono da peça jogada 
+
+- Se o grid está completo e ninguém venceu, o jogo acaba e não há vencedor
+
+- Jogadas só podem ser feitas no intervalo de coordenadas [0,2]
+- Se for feita uma jogada invalida, a vez continua com o mesmo jogador
