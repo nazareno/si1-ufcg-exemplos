@@ -11,6 +11,7 @@ public class JogoDaVelha {
 
 	/**
 	 * Jogadas são automaticamente alternadas. Índices vão de 0 a 2.
+	 * 
 	 * @param i
 	 * @param j
 	 * @throws JogadaInvalidaException
@@ -19,7 +20,7 @@ public class JogoDaVelha {
 		if (espacosOcupados[i][j] == true) {
 			throw new JogadaInvalidaException();
 		}
-		
+
 		espacosOcupados[i][j] = true;
 		numEspacosOcupados++;
 	}
