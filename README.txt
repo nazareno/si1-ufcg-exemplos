@@ -1,4 +1,5 @@
 Exemplos de código para o curso de Sistemas de Informação 1 da UFCG.
+Tiago Gonçalves Silva
 
 src-20112/         : Exemplos usados em 2011.2. Todos os exemplos estão tais quais no fim das aulas. 
 src/si20121/antes  : Exemplos do semestre atual, tal como no começo da aula (isso é, sem solução)
