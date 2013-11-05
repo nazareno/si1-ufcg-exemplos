@@ -1,3 +1,5 @@
+(Pequena modificação feita aqui, apenas para fazer o pull).
+
 Exemplos de código para o curso de Sistemas de Informação 1 da UFCG.
 
 src-20112/         : Exemplos usados em 2011.2. Todos os exemplos estão tais quais no fim das aulas. 
